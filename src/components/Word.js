@@ -8,6 +8,8 @@ const totitlecase = (str) => {
 }
 
 export default function Word(props){
+
+  
   const handleupclick=()=>{
     
     let newtext =Text.toUpperCase();
@@ -61,19 +63,19 @@ export default function Word(props){
     <div className="container"style={{color:props.mode==='dark'?'white':'black'}}>    
         <h1>{props.heading}</h1>
         <div className="mb-3">
-        <textarea className="form-control" value={Text} onChange={handleonchange} style={{backgroundColor:props.mode==='dark'?'grey':'white',color:props.mode==='dark'?'white':'black'}} id="mybox" rows="8"></textarea>
+        <textarea className="form-control" value={Text} onChange={handleonchange} style={{backgroundColor:props.mode==='dark'?'#13466e':'white',color:props.mode==='dark'?'white':'black'}} id="mybox" rows="8"></textarea>
         </div>
-        <button className="btn btn-primary mx-2" onClick={handleupclick}>convert to uppercase</button>
-        <button className="btn btn-primary mx-2" onClick={handleloclick}>convert to lowercase</button>
-        <button className="btn btn-primary mx-2" onClick={handleclearclick}>clear text</button>
-        <button className="btn btn-primary mx-2" onClick={handletitleclick}> titlecase</button>
-        <button className="btn btn-primary mx-2" onClick={handlecopy}>copy text</button>
+        <button disabled={Text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleupclick}>convert to uppercase</button>
+        <button disabled={Text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleloclick}>convert to lowercase</button>
+        <button disabled={Text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleclearclick}>clear text</button>
+        <button disabled={Text.length===0} className="btn btn-primary mx-2 my-2" onClick={handletitleclick}>convert to titlecase</button>
+        <button disabled={Text.length===0} className="btn btn-primary mx-2 my-2" onClick={handlecopy}>copy text</button>
        
     </div>
     <div className="container my-3" style={{color:props.mode==='dark'?'white':'black'}}>
       <h1>Your text summary</h1>
-      <p>{Text.trim()===''?0:Text.split(" ").length} words and {Text.length} characters</p>
-      <p>{0.008*Text.split(" ").length} minutes read</p>
+      <p>{Text.split(/\s+/).filter((element)=>{return element.length!==0 }).length} words and {Text.length} characters</p>
+      <p>{0.008*Text.split(" ").filter((element)=>{return element.length!==0 }).length} minutes read</p>
       <h3>Preview</h3>
       <p>{Text.length>0?Text:'Enter text to preview it'}</p>
     </div>
