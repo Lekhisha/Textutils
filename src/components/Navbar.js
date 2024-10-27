@@ -26,7 +26,8 @@ export default function Navbar(props) {
           <label className={`text-${props.mode==='light'?'dark':'light'}`}><u>Color Palete</u></label>
         <div className="bg-warning-subtle mx-2 rounded-5" onClick={()=>{props.colorpalete('warning-subtle')}} style={{height:'30px',width:'30px'}}></div>
         <div className="bg-info-subtle mx-2 rounded-5" onClick={()=>{props.colorpalete('info-subtle')}} style={{height:'30px',width:'30px'}}></div>
-        <div className='bg-danger-subtle mx-2 rounded-5' onClick={()=>{props.colorpalete('danger-subtle')}} style={{height:'30px',width:'30px'}}></div>
+        <div className='bg-danger-subtle
+         mx-2 rounded-5' onClick={()=>{props.colorpalete('danger-subtle')}} style={{height:'30px',width:'30px'}}></div>
         </div>
        
         <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
