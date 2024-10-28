@@ -4,7 +4,6 @@ import About from './components/About';
 import Navbar from './components/Navbar';
 import Word from './components/Word';
 import Alert from './components/Alert';
-/*import ReactDOM from 'react-dom/client';*/
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -82,6 +81,5 @@ useEffect(()=>{
     </> 
   );     
 }
-/*const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);*/
+
 export default App;

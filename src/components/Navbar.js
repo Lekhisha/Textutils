@@ -18,10 +18,6 @@ export default function Navbar(props) {
             <Link className="nav-link active" to="/About"><u>{props.aboutText}</u></Link>
           </li>
         </ul>
-        {/*<form className="d-flex" role="search">
-          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-          <button className="btn btn-outline-success" type="submit">Search</button>
-        </form>*/}
         <div className="d-flex">
           <label className={`text-${props.mode==='light'?'dark':'light'}`}><u>Color Palete</u></label>
         <div className="bg-warning-subtle mx-2 rounded-5" onClick={()=>{props.colorpalete('warning-subtle')}} style={{height:'30px',width:'30px'}}></div>
