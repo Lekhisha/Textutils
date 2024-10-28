@@ -4,7 +4,7 @@ import About from './components/About';
 import Navbar from './components/Navbar';
 import Word from './components/Word';
 import Alert from './components/Alert';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   const [mode,setmode]=useState('light');
@@ -63,7 +63,7 @@ useEffect(()=>{
   return (
     <>
    {/*<Navbar title="Textutils" aboutText="About us"/>*/}
-   <BrowserRouter>
+   <Router>
    <Navbar title="Textutils" mode={mode} togglemode={togglemode} colorpalete={colorpalete}  aboutText="About"/>
    <Alert alert={alert} welcomeuser={showwelcome}/>
    
@@ -75,7 +75,7 @@ useEffect(()=>{
           <Route exact path="/About" element={<About mode={mode}/>}/>
     </Routes>
    </div>
-   </BrowserRouter>
+   </Router>
   
  
     </> 
